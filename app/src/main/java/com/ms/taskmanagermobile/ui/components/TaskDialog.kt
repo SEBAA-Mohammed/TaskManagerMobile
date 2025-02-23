@@ -9,6 +9,7 @@ import com.ms.taskmanagermobile.data.model.Task
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
 
+// Gestion de toute interaction utilisateur pour la création et la modification des tâches
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun TaskDialog(
@@ -44,16 +45,14 @@ fun TaskDialog(
                         .fillMaxWidth()
                         .padding(vertical = 8.dp)
                 )
-                
-                // Date button
+
                 OutlinedButton(
                     onClick = { showDatePicker = true },
                     modifier = Modifier.fillMaxWidth()
                 ) {
                     Text("Date: ${selectedDate.format(DateTimeFormatter.ofPattern("dd/MM/yyyy"))}")
                 }
-                
-                // Time button
+
                 OutlinedButton(
                     onClick = { showTimePicker = true },
                     modifier = Modifier.fillMaxWidth()
@@ -81,7 +80,6 @@ fun TaskDialog(
         }
     )
 
-    // Date Picker Dialog
     if (showDatePicker) {
         DatePickerDialog(
             onDismissRequest = { showDatePicker = false },
@@ -95,7 +93,6 @@ fun TaskDialog(
         )
     }
 
-    // Time Picker Dialog
     if (showTimePicker) {
         TimePickerDialog(
             onDismissRequest = { showTimePicker = false },

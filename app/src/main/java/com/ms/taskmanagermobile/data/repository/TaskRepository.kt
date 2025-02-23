@@ -3,6 +3,7 @@ package com.ms.taskmanagermobile.data.repository
 import com.ms.taskmanagermobile.data.api.RetrofitClient
 import com.ms.taskmanagermobile.data.model.Task
 
+// Traitement des requete en utilisant l'instand de taskapi
 class TaskRepository {
     private val api = RetrofitClient.taskApi
 

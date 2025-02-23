@@ -6,6 +6,7 @@ import androidx.compose.material.icons.filled.List
 import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
 
+// Barre de navigation inférieure
 @Composable
 fun BottomNavBar(
     currentRoute: String,

@@ -3,6 +3,7 @@ package com.ms.taskmanagermobile.data.api
 import com.ms.taskmanagermobile.data.model.Task
 import retrofit2.http.*
 
+// Définition des endpoints de l'API
 interface TaskApi {
     @GET("tasks")
     suspend fun getTasks(): List<Task>

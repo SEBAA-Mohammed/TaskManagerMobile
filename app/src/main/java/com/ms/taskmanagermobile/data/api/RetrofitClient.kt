@@ -16,6 +16,7 @@ import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
 import java.util.concurrent.TimeUnit
 
+// Configuration Retrofit pour les appels API REST
 object RetrofitClient {
     private const val BASE_URL = "http://192.168.1.105:3000/"
 

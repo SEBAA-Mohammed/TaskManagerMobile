@@ -6,6 +6,8 @@ import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 
+
+// Gestion de toute interaction utilisateur pour la création et la modification des tâches
 @Composable
 fun AddTaskDialog(
     onDismiss: () -> Unit,

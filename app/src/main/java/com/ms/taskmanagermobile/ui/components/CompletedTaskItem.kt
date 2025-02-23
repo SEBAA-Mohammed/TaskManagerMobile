@@ -8,6 +8,7 @@ import androidx.compose.ui.unit.dp
 import com.ms.taskmanagermobile.data.model.Task
 import java.time.format.DateTimeFormatter
 
+// Composant réutilisable pour afficher une tâche (complete )
 @Composable
 fun CompletedTaskItem(
     task: Task,

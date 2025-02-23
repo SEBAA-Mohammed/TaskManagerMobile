@@ -16,6 +16,7 @@ import com.ms.taskmanagermobile.data.model.Task
 import com.ms.taskmanagermobile.util.DateTimeUtil
 import java.time.format.DateTimeFormatter
 
+// Composant réutilisable pour afficher une tâche (non complete )
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun TaskItem(
