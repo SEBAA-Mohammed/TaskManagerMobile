@@ -34,14 +34,15 @@ class MainActivity : ComponentActivity() {
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun TaskManagerApp(viewModel: TaskViewModel = viewModel()) {
-    var currentRoute by remember { mutableStateOf("tasks") }
-    var showAddDialog by remember { mutableStateOf(false) }
-    var taskToEdit by remember { mutableStateOf<Task?>(null) }
-    val tasks by viewModel.tasks.collectAsState()
-    val error by viewModel.error.collectAsState()
+    var currentRoute by remember { mutableStateOf("tasks") } // Navigation actuelle
+    var showAddDialog by remember { mutableStateOf(false) } // Dialogue d'ajout visible
+    var taskToEdit by remember { mutableStateOf<Task?>(null) } // Tâche en cours d'édition
+    val tasks by viewModel.tasks.collectAsState() // Liste des tâches
+    val error by viewModel.error.collectAsState() // Messages d'erreur
 
     Scaffold(
         modifier = Modifier.fillMaxSize(),
+        // Titre dynamique selon la page
         topBar = {
             TopAppBar(
                 title = { Text(if (currentRoute == "tasks") "Tâches à faire" else "Tâches terminées") },
@@ -55,6 +56,7 @@ fun TaskManagerApp(viewModel: TaskViewModel = viewModel()) {
             )
         },
         bottomBar = { BottomNavBar(currentRoute) { currentRoute = it } },
+        // Affiche les messages d'erreur en bas de l'écran
         snackbarHost = {
             error?.let { errorMessage ->
                 Snackbar(
